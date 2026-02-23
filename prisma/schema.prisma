@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ─── Admin / Super Admin ──────────────────────────────────────────────────────
+
+model Admin {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // bcrypt hash
+  name      String
+  role      AdminRole @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  notes     EnquiryNote[]
+  meetings  Meeting[]
+
+  @@map("admins")
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  ADMIN
+}
+
+// ─── Lead (Prospect / Enquiry) ────────────────────────────────────────────────
+
+model Lead {
+  id           String      @id @default(cuid())
+  // Contact info collected mid-quiz
+  name         String
+  email        String      @unique
+  phone        String
+  storeName    String
+  city         String
+  annualTurnover String    // e.g. "₹50L–₹1Cr"
+
+  // Quiz results
+  quizScore    Int         // 0–5
+  quizPercent  Int         // 0–100
+  quizLabel    String      // "High Leakage Risk" | "Moderate Risk" | "Structured Control"
+  quizAnswers  Json        // full answers array [{questionId, answer}]
+
+  // Status tracking
+  status       LeadStatus  @default(NEW)
+  stage        LeadStage   @default(ENQUIRY)
+
+  // Portal access (created by admin)
+  portalEmail    String?   @unique
+  portalPassword String?   // bcrypt hash
+  portalEnabled  Boolean   @default(false)
+
+  createdAt    DateTime    @default(now())
+  updatedAt    DateTime    @updatedAt
+
+  notes        EnquiryNote[]
+  meetings     Meeting[]
+
+  @@map("leads")
+}
+
+enum LeadStatus {
+  NEW
+  CONTACTED
+  QUALIFIED
+  CONVERTED
+  REJECTED
+}
+
+enum LeadStage {
+  ENQUIRY
+  DIAGNOSTIC_SCHEDULED
+  DIAGNOSTIC_DONE
+  PROPOSAL_SENT
+  ONBOARDED
+  COMPLETED
+}
+
+// ─── Enquiry Note (Admin adds notes to a Lead) ────────────────────────────────
+
+model EnquiryNote {
+  id        String   @id @default(cuid())
+  content   String
+  leadId    String
+  adminId   String
+  createdAt DateTime @default(now())
+
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  admin     Admin    @relation(fields: [adminId], references: [id])
+
+  @@map("enquiry_notes")
+}
+
+// ─── Meeting (Admin assigns meeting link to Lead) ────────────────────────────
+
+model Meeting {
+  id          String      @id @default(cuid())
+  leadId      String
+  adminId     String
+  title       String      @default("Stock Control Diagnostic Call")
+  meetingLink String
+  scheduledAt DateTime?
+  notes       String?
+  status      MeetingStatus @default(SCHEDULED)
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  lead        Lead        @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  admin       Admin       @relation(fields: [adminId], references: [id])
+
+  @@map("meetings")
+}
+
+enum MeetingStatus {
+  SCHEDULED
+  COMPLETED
+  CANCELLED
+  RESCHEDULED
+}

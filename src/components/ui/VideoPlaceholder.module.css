@@ -1,0 +1,81 @@
+.wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+    overflow: hidden;
+}
+
+.wrapper:hover {
+    border-color: var(--color-black);
+}
+
+.inner {
+    text-align: center;
+    max-width: 480px;
+    padding: 2rem;
+}
+
+.playButton {
+    width: 48px;
+    height: 48px;
+    border: 1.5px solid var(--color-muted);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    color: var(--color-muted);
+    transition: all 0.2s ease;
+}
+
+.wrapper:hover .playButton {
+    border-color: var(--color-black);
+    color: var(--color-black);
+}
+
+.title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+}
+
+/* ─── Embed Wrapper (YouTube, Vimeo, Loom) ─────────────────────────── */
+
+.embedWrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    background: #000;
+}
+
+.iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* ─── Native Video ─────────────────────────────────────────────────── */
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

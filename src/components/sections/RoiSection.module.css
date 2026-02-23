@@ -1,0 +1,102 @@
+.section {
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-green);
+    margin-bottom: 1rem;
+}
+
+.headline {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    color: var(--color-black);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+}
+
+.baseNote {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin-bottom: 2.5rem;
+    letter-spacing: 0.02em;
+}
+
+.tableWrapper {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border: 1px solid var(--color-border);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+}
+
+.th {
+    padding: 0.875rem 1.25rem;
+    text-align: left;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.td {
+    padding: 1rem 1.25rem;
+    color: var(--color-black);
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: middle;
+}
+
+.rowAlt .td {
+    background: var(--color-surface);
+}
+
+.mismatchBadge {
+    display: inline-block;
+    background: rgba(26, 107, 60, 0.08);
+    color: var(--color-green);
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 2px;
+}
+
+.tdFiveYear {
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.mathNote {
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    border-left: 3px solid var(--color-black);
+    margin-bottom: 2rem;
+}
+
+.mathNote p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.tagline {
+    font-family: var(--font-serif);
+    font-size: 1.375rem;
+    font-weight: 600;
+    color: var(--color-black);
+    font-style: italic;
+}

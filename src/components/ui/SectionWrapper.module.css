@@ -1,0 +1,13 @@
+.section {
+    padding: var(--section-padding-y) var(--section-padding-x);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    width: 100%;
+}
+
+.narrow {
+    max-width: 720px;
+}

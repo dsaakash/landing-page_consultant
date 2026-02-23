@@ -1,0 +1,32 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    padding: 1.5rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+}
+
+.accent {
+    border-color: var(--color-green);
+    border-left: 3px solid var(--color-green);
+}
+
+.value {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-black);
+    line-height: 1;
+}
+
+.accent .value {
+    color: var(--color-green);
+}
+
+.label {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}

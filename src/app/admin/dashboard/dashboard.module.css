@@ -1,0 +1,374 @@
+.page {
+    min-height: 100vh;
+    background: var(--color-surface);
+}
+
+/* Top Bar */
+.topBar {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.topInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.875rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topTitle {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.topRight {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.topBrand {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-green);
+}
+
+.logoutBtn {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    background: none;
+    border: 1px solid var(--color-border);
+    padding: 0.375rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+    color: var(--color-black);
+    border-color: var(--color-black);
+}
+
+/* Filters */
+.filtersBar {
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.filtersInner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.75rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.searchForm {
+    display: flex;
+    flex: 1;
+    min-width: 240px;
+}
+
+.searchInput {
+    flex: 1;
+    padding: 0.5rem 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    border: 1px solid var(--color-border);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    outline: none;
+    color: var(--color-black);
+}
+
+.searchInput:focus {
+    border-color: var(--color-green);
+}
+
+.searchBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    border-radius: 0 2px 2px 0;
+    cursor: pointer;
+    font-family: var(--font-sans);
+}
+
+.filterSelect {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    font-family: var(--font-sans);
+    border: 1px solid var(--color-border);
+    border-radius: 2px;
+    color: var(--color-black);
+    outline: none;
+    background: var(--color-white);
+}
+
+.totalCount {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+    letter-spacing: 0.04em;
+    margin-left: auto;
+}
+
+/* Main */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 2rem;
+}
+
+.loading {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+}
+
+.empty {
+    text-align: center;
+    padding: 4rem;
+    color: var(--color-muted);
+}
+
+.emptyHint {
+    font-size: 0.8125rem;
+    margin-top: 0.5rem;
+}
+
+/* Table */
+.tableWrap {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+}
+
+.th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-muted);
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.row {
+    transition: background 0.15s;
+}
+
+.row:hover {
+    background: var(--color-surface);
+}
+
+.td {
+    padding: 0.875rem 1rem;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+/* Cells */
+.nameCell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+
+.leadName {
+    font-weight: 600;
+    color: var(--color-black);
+    font-size: 0.875rem;
+}
+
+.storeName {
+    color: var(--color-text-secondary);
+    font-size: 0.8125rem;
+}
+
+.turnover {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+}
+
+.contactCell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    color: var(--color-text-secondary);
+}
+
+.phone {
+    font-size: 0.75rem;
+    color: var(--color-muted);
+}
+
+.dateText {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    white-space: nowrap;
+}
+
+/* Score Bar */
+.scoreWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 120px;
+}
+
+.scoreTrack {
+    height: 3px;
+    background: var(--color-border);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.scoreFill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s;
+}
+
+.scoreBarHigh {
+    background: #c0392b;
+}
+
+.scoreBarMod {
+    background: #d4811f;
+}
+
+.scoreBarGood {
+    background: var(--color-green);
+}
+
+.scoreLabel {
+    font-size: 0.6875rem;
+    color: var(--color-muted);
+    white-space: nowrap;
+}
+
+/* Badge */
+.badge {
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.5rem;
+    border-radius: 2px;
+    white-space: nowrap;
+}
+
+.badgeNew {
+    background: rgba(26, 107, 60, 0.08);
+    color: var(--color-green);
+}
+
+.badgeContacted {
+    background: rgba(212, 129, 31, 0.08);
+    color: #d4811f;
+}
+
+.badgeQualified {
+    background: rgba(41, 128, 185, 0.08);
+    color: #2980b9;
+}
+
+.badgeConverted {
+    background: rgba(46, 204, 113, 0.08);
+    color: #27ae60;
+}
+
+.badgeRejected {
+    background: rgba(192, 57, 43, 0.06);
+    color: #c0392b;
+}
+
+/* Actions */
+.actionCell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    align-items: flex-start;
+}
+
+.viewBtn {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: var(--color-green);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.viewBtn:hover {
+    color: var(--color-green-dark);
+}
+
+.noteBadge {
+    font-size: 0.625rem;
+    color: var(--color-muted);
+}
+
+.portalBadge {
+    font-size: 0.625rem;
+    color: var(--color-green);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+}
+
+.pageBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8125rem;
+    border: 1px solid var(--color-border);
+    background: var(--color-white);
+    color: var(--color-black);
+    cursor: pointer;
+    border-radius: 2px;
+    font-family: var(--font-sans);
+    transition: all 0.2s;
+}
+
+.pageBtn:hover:not(:disabled) {
+    border-color: var(--color-black);
+}
+
+.pageBtn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.pageInfo {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+}
