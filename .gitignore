@@ -1,13 +1,32 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# env files
 .env
-.node
-.node_modules
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# build output
 dist
+.next
+out
+build
+
+# testing
 coverage
+
+# misc
 .DS_Store
 *.log
 *.pid
 *.seed
 *.pid.lock
+
+# editor swap files
 *.swp
 *.swo
 *.swn
@@ -15,12 +34,3 @@ coverage
 *.swl
 *.swx
 *.swz
-*.swo
-*.swm
-*.swl
-*.swx
-*.swz
-*.swp
-====== 
-.node_.env
-.node
